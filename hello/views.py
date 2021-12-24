@@ -11,12 +11,12 @@ def index(request):
 
 def db(request):
 
-    greeting = Greeting()
-    greeting.save()
+    #greeting = Greeting()
+    #greeting.save()
 
-    greetings = Greeting.objects.all()
+    #greetings = Greeting.objects.all()
 
-    return render(request, "db.html", {"greetings": greetings})
+    return render(request, "db.html")
 
 def home(request):
     movies = Movie.objects.all()  

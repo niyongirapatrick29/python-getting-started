@@ -5,16 +5,45 @@
   <div class="container">
 
 
-<h2>Page View Report</h2>
+<h2>Movie Directory</h2>
 
 
-<ul>
+<div class="col-12 bg">
+  <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Logo</th>
+            <th>Title</th>
+            <th>Actor</th>
+            <th>Year</th>
+            <th>Genre</th>
+            <th>Language</th>
+            <th>Option</th>
+          </tr>
+        </thead>
+        <tbody>
 
-{% for greeting in greetings %}
-    <li>{{ greeting.when }}</li>
-{% endfor %}
-
-</ul>
+{% for movie in movies %}  
+<tr>  
+  <td>{{ forloop.counter }}</td> 
+  <td><a href="/movieDetails/{{movie.movieId}}"><img src="{{ movie.movieLogo.url }}" alt="Logo" width="20%" /></a></td>
+  <td>{{ movie.movieTitle }}</td>  
+  <td>{{ movie.movieActor }}</td> 
+  <td>{{ movie.movieYear }}</td> 
+  <td>{{ movie.movieGenre }}</td> 
+  <td>{{ movie.movieLanguage }}</td>  
+  <td>  
+      <a href="/movieDetails/{{movie.movieId}}"><span class="fa fa-eye" ></span></a>  
+      <!--<a href="/delete/{{ employee.eid }}">Delete</a> -->  
+  </td>  
+</tr>  
+{% endfor %}  
+        </tbody>
+      </table>
+    </div>
+</div>
 
 </div>
 
