@@ -2,9 +2,9 @@
 {% load static %}
 
 {% block content %}
-
+<div class="container">
 <div class="jumbotron text-center">
-  <div class="container">
+  <div class="row">
     <a href="/" class="lang-logo">
       <img src="{% static 'lang-logo.png'%}">
     </a>
@@ -14,7 +14,7 @@
     <a type="button" class="btn btn-lg btn-primary" href="movies/"><span class="glyphicon glyphicon-download"></span> Videos</a>
   </div>
 </div>
-<div class="container">
+<div class="row">
   <div class="alert alert-info text-center" role="alert">
     You can watch a lot of movies from this library don't leave <a href="https://devcenter.heroku.com/articles/getting-started-with-python" class="alert-link">Getting Started with Python on Heroku</a> tutorial.
   </div>
@@ -22,7 +22,7 @@
   <div class="row">
     <div class="col-md-6">
       <h3><span class="glyphicon glyphicon-info-sign"></span> How this sample app works</h3>
-      <img src="{% static 'home.jpg'%}">
+      <img src="{% static 'home.jpg'%}" width="100%">
     </div>
     <div class="col-md-6">
       <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
@@ -38,5 +38,6 @@
    <div class="alert alert-info text-center" role="alert">
     Please If you are satisfied, Buy me a cup of tea.
   </div>
+</div>
 </div>
 {% endblock %}
