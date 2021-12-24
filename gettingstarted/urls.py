@@ -19,4 +19,5 @@ urlpatterns = [
     path("db/", hello.views.db, name="db"),
     path("movies/", hello.views.home, name="home"),
     path("admin/", admin.site.urls),
+    path('movieDetails/<int:movieId>/', hello.views.movieDetail, name="movieDetail"),
 ]

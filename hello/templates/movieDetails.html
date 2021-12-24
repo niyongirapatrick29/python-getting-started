@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="container">
+
+
+<h2>Movie Directory</h2>
+
+
+<div class="container">
+  <div class="row">
+      <div class="col-6 bg-basic">
+          <div class="card" style="width:100%; height: 50%;">
+              <img class="card-img" src="{{ movieDetails.movieLogo.url }}" alt="Card image" width="auto" height= "50%">
+              <div class="card-body">
+                  <span class="fa fa-list"> Movie Details</span>
+              <table class="table table-dark table-hover" style="width: 100%;">
+                  <tbody style="font-size: small;">
+                    <tr>
+                      <td>Genre: </td>
+                      <td><i>{{movieDetails.movieGenre}}</i></td>  
+                    </tr>
+                    <tr>
+                      <td>Actor: </td>
+                      <td><i>{{movieDetails.movieActor}}</i></td>                       
+                    </tr>
+                    <tr>
+                      <td>Language:</td>
+                      <td><i>{{movieDetails.movieLanguage}}</i></td>
+                    </tr>
+                    <tr>
+                      <td>Published on: </td>
+                      <td><i>{{movieDetails.movieYear}}</i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          
+          </div>
+          
+      </div>
+     
+      <div class="col-6 bg-basic" style="padding: 5px;">
+       <div class="card" style="width:100%; height: 50%;">
+         <span class="alert alert-info" style="width: 100%;">Details of: {{movieDetails.movieTitle}}</span>
+          <video width="100%" height="50%" controls>
+              <source src="{{ movieDetails.movie_file.url }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+       </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -21,3 +21,7 @@ def db(request):
 def home(request):
     movies = Movie.objects.all()  
     return render(request,'home.html',{'movies' :movies})
+
+def movieDetail(request, movieId):
+    movieDetails = Movie.objects.get(movieId=movieId)
+    return render(request,'movieDetails.html',{'movieDetails' :movieDetails})
