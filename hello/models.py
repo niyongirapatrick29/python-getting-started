@@ -1,6 +1,6 @@
 from django.db import models
 #from django.db.models import CheckConstraint
-from PIL import Image
+#from PIL import Image
 
 # Create your models here.
 class Greeting(models.Model):
@@ -45,7 +45,7 @@ class Movie(models.Model):
     LANGUAGE_CHOICES = [(ENG, 'English'), (KINY, 'kinyarwanda'), (FR, 'French')]
     movieLanguage = models.CharField(max_length=200, choices=LANGUAGE_CHOICES)
     movieGenre = models.ForeignKey(Genre, on_delete=models.CASCADE)
-    movieLogo = models.ImageField(upload_to='img/%y')
+    movieLogo = models.FileField(upload_to='img/%y')
     movie_file = models.FileField(upload_to='img/%y')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
