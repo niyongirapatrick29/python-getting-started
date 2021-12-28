@@ -28,7 +28,7 @@
 {% for movie in movies %}  
 <tr>  
   <td>{{ forloop.counter }}</td> 
-  <td><a href="/movieDetails/{{movie.movieId}}"><img src="{{ movie.movieLogo.url }}" alt="Logo" width="20%" /></a></td>
+  <td><a href="/movieDetails/{{movie.movieId}}"><img src="{{ movie.movieLogo.url }}" alt="Logo" width="20%" height="20%" /></a></td>
   <td>{{ movie.movieTitle }}</td>  
   <td>{{ movie.movieActor }}</td> 
   <td>{{ movie.movieYear }}</td> 
