@@ -45,12 +45,12 @@ class Movie(models.Model):
     LANGUAGE_CHOICES = [(ENG, 'English'), (KINY, 'kinyarwanda'), (FR, 'French')]
     movieLanguage = models.CharField(max_length=200, choices=LANGUAGE_CHOICES)
     movieGenre = models.ForeignKey(Genre, on_delete=models.CASCADE)
-    movieLogo = models.FileField(upload_to='img/%y')
-    movie_file = models.FileField(upload_to='img/%y')
+    movieLogo = models.FileField(upload_to='images/')
+    movie_file = models.FileField(upload_to='videos/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    class Meta:  
+    class Meta: 
         db_table = "movies"
     def __str__(self):
         return "{} - {} - {}".format(self.movieTitle, self.movieActor, self.movieYear)
